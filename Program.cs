@@ -118,7 +118,7 @@ else if (ageFifthPerson < 18)
 #endregion Fifth Person
 
 Random sorteador = new Random();
-int sorteio = 8;  //sorteador.Next(1, 11);
+int sorteio = 7;  //sorteador.Next(1, 11);
 Console.WriteLine("\nO número sorteado é: " + sorteio);
 
 if (number1People1 == sorteio || number2People1 == sorteio || number3People1 == sorteio || 
