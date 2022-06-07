@@ -8,7 +8,7 @@ int[] numbersPerson3 = new int[NUMBERS_AMOUNT];
 int[] numbersPerson4 = new int[NUMBERS_AMOUNT];
 int[] numbersPerson5 = new int[NUMBERS_AMOUNT];
 
-bool validPerson1 = false, validPerson2 = false, validPerson3 = false, validPerson4 = false, validPerson5 = false;
+bool[] validPersons = new bool[4];
 #endregion Variáveis
 
 #region First Person
@@ -23,12 +23,12 @@ if (ageFirstPerson >= 18)
     for(int index = 0; index < NUMBERS_AMOUNT; index++)
         numbersPerson1[index] = int.Parse(Console.ReadLine());
 
-    validPerson1 = true;
+    validPersons[0] = true;
 }
 else if (ageFirstPerson < 18)
 {
     Console.WriteLine("Desclassificado");
-    validPerson1 = false;
+    validPersons[0] = false;
 
 }
 #endregion First Person
@@ -45,12 +45,12 @@ if (ageSecondPerson >= 18)
     for(int index = 0; index < NUMBERS_AMOUNT; index++)
         numbersPerson2[index] = int.Parse(Console.ReadLine());
   
-    validPerson2 = true;
+    validPersons[1] = true;
 }
 else if (ageSecondPerson < 18)
 {
     Console.WriteLine("Desclassificado!");
-    validPerson2 = false;
+    validPersons[1] = false;
 }
 #endregion Second Person
 
@@ -66,12 +66,12 @@ if (ageThirdPerson >= 18)
     for(int index = 0; index < NUMBERS_AMOUNT; index++)
         numbersPerson3[index] = int.Parse(Console.ReadLine());
     
-    validPerson3 = true;
+    validPersons[2] = true;
 }
 else if (ageThirdPerson < 18)
 {
     Console.WriteLine("Desclassificado!");
-    validPerson3 = false;
+    validPersons[2] = false;
 }
 #endregion Third Person
 
@@ -87,12 +87,12 @@ if (ageFourthPerson >= 18)
     for(int index = 0; index < NUMBERS_AMOUNT; index++)
         numbersPerson4[index] = int.Parse(Console.ReadLine());
     
-    validPerson4 = true;
+    validPersons[3] = true;
 }
 else if (ageFourthPerson < 18)
 {
     Console.WriteLine("Desclassificado!");
-    validPerson4 = false;
+    validPersons[3] = false;
 }
 #endregion Fourth Person
 
@@ -108,12 +108,12 @@ if (ageFifthPerson >= 18)
     for(int index = 0; index < NUMBERS_AMOUNT; index++)
         numbersPerson5[index] = int.Parse(Console.ReadLine());
     
-    validPerson5 = true;
+    validPersons[4] = true;
 }
 else if (ageFifthPerson < 18)
 {
     Console.WriteLine("Desclassificado!");
-    validPerson5 = false;
+    validPersons[4] = false;
 
 }
 #endregion Fifth Person
@@ -168,26 +168,26 @@ else
     Console.WriteLine("ninguém ganhou!");
     decimal consolationPrize = 100_000;
     int validPeoples = 0;
-    if (validPerson1)
+    if (validPersons[0])
         validPeoples++;
-    if (validPerson2)
+    if (validPersons[1])
         validPeoples++;
-    if (validPerson3)
+    if (validPersons[2])
         validPeoples++;
-    if (validPerson4)
+    if (validPersons[3])
         validPeoples++;
-    if (validPerson5)
+    if (validPersons[4])
         validPeoples++;
     decimal divisionPrize = consolationPrize / validPeoples;
-    if (validPerson1)
+    if (validPersons[0])
         Console.WriteLine($"{firstPerson} de {ageFirstPerson} anos ganhou um prêmio de consolação no valor de {divisionPrize}");
-    if (validPerson2)
+    if (validPersons[1])
         Console.WriteLine($"{secondPerson} de {ageSecondPerson} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
-    if (validPerson3)
+    if (validPersons[2])
         Console.WriteLine($"{thirdPerson} de {ageThirdPerson} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
-    if (validPerson4)
+    if (validPersons[3])
         Console.WriteLine($"{fourthPerson} de {ageFourthPerson} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
-    if (validPerson5)
+    if (validPersons[4])
         Console.WriteLine($"{fifthPerson} de {ageFifthPerson} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
 
 
