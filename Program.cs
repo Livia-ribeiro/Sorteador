@@ -1,119 +1,131 @@
 ﻿//using MinhaBiblioteca;
 //CursoExemplo1.Executar("Lívia");
 #region Variáveis
-const int NUMBERS_AMOUNT = 3;
-int[] numbersPerson1 = new int[NUMBERS_AMOUNT];
-int[] numbersPerson2 = new int[NUMBERS_AMOUNT];
-int[] numbersPerson3 = new int[NUMBERS_AMOUNT];
-int[] numbersPerson4 = new int[NUMBERS_AMOUNT];
-int[] numbersPerson5 = new int[NUMBERS_AMOUNT];
+using PROGRAM;
 
-bool[] validPersons = new bool[4];
+const int NUMBERS_AMOUNT = 3;
+
+Participant[] participants = new Participant[5];
 #endregion Variáveis
 
 #region First Person
+participants[0] = new Participant();
 Console.WriteLine("Qual o seu nome completo?");
-string firstPerson = Console.ReadLine();
+participants[0].Name = Console.ReadLine();
 Console.WriteLine("Qual seu ano de nascimento?");
-int birthDate1 = int.Parse(Console.ReadLine());
-int ageFirstPerson = 2022 - birthDate1;
-if (ageFirstPerson >= 18)
+int yearBirth1 = int.Parse(Console.ReadLine());
+participants[0].Age = 2022 - yearBirth1;
+if (participants[0].Age >= 18)
 {
-    Console.WriteLine("Informe três números de 1 a 10");
-    for(int index = 0; index < NUMBERS_AMOUNT; index++)
-        numbersPerson1[index] = int.Parse(Console.ReadLine());
+    participants[0].Numbers = new int[NUMBERS_AMOUNT];
 
-    validPersons[0] = true;
+    Console.WriteLine("Informe três números de 1 a 10");
+    for(int indexNumbers = 0; indexNumbers < NUMBERS_AMOUNT; indexNumbers++)
+        participants[0].Numbers[indexNumbers] = int.Parse(Console.ReadLine());
+
+    participants[0].Valid = true;
 }
-else if (ageFirstPerson < 18)
+else if (participants[0].Age < 18)
 {
     Console.WriteLine("Desclassificado");
-    validPersons[0] = false;
+    participants[0].Valid = false;
 
 }
 #endregion First Person
 
 #region Second Person
+participants[1] = new Participant();
 Console.WriteLine("\nQual o seu nome completo?");
-string secondPerson = Console.ReadLine();
+participants[1].Name = Console.ReadLine();
 Console.WriteLine("Qual seu ano de nascimento?");
-int birthDate2 = int.Parse(Console.ReadLine());
-int ageSecondPerson = 2022 - birthDate2;
-if (ageSecondPerson >= 18)
+int yearBirth2 = int.Parse(Console.ReadLine());
+participants[1].Age = 2022 - yearBirth2;
+if (participants[1].Age >= 18)
 {
+    participants[1].Numbers = new int[NUMBERS_AMOUNT];
+
     Console.WriteLine("Informe três números de 1 a 10");
-    for(int index = 0; index < NUMBERS_AMOUNT; index++)
-        numbersPerson2[index] = int.Parse(Console.ReadLine());
+    for(int indexNumbers = 0; indexNumbers < NUMBERS_AMOUNT; indexNumbers++)
+        participants[1].Numbers[indexNumbers] = int.Parse(Console.ReadLine());
   
-    validPersons[1] = true;
+    participants[1].Valid = true;
 }
-else if (ageSecondPerson < 18)
+else if (participants[1].Age < 18)
 {
     Console.WriteLine("Desclassificado!");
-    validPersons[1] = false;
+    participants[1].Valid = false;
 }
 #endregion Second Person
 
 #region Third Person
+participants[2] = new Participant();
 Console.WriteLine("\nQual o seu nome completo?");
-string thirdPerson = Console.ReadLine();
+participants[2].Name = Console.ReadLine();
 Console.WriteLine("Qual seu ano de nascimento?");
-int birthDate3 = int.Parse(Console.ReadLine());
-int ageThirdPerson = 2022 - birthDate3;
-if (ageThirdPerson >= 18)
+int yearBirth3 = int.Parse(Console.ReadLine());
+participants[2].Age = 2022 - yearBirth3;
+if (participants[2].Age >= 18)
 {
+    participants[2].Numbers = new int[NUMBERS_AMOUNT];
+
     Console.WriteLine("Informe três números de 1 a 10");
-    for(int index = 0; index < NUMBERS_AMOUNT; index++)
-        numbersPerson3[index] = int.Parse(Console.ReadLine());
+    for(int indexNumbers = 0; indexNumbers < NUMBERS_AMOUNT; indexNumbers++)
+        participants[2].Numbers[indexNumbers] = int.Parse(Console.ReadLine());
     
-    validPersons[2] = true;
+    participants[2].Valid = true;
 }
-else if (ageThirdPerson < 18)
+else if (participants[2].Age < 18)
 {
     Console.WriteLine("Desclassificado!");
-    validPersons[2] = false;
+    participants[2].Valid = false;
 }
 #endregion Third Person
 
 #region Fourth Person
+participants[3] = new Participant();
 Console.WriteLine("\nQual o seu nome completo?");
-string fourthPerson = Console.ReadLine();
+participants[3].Name = Console.ReadLine();
 Console.WriteLine("Qual seu ano de nascimento?");
-int birthDate4 = int.Parse(Console.ReadLine());
-int ageFourthPerson = 2022 - birthDate4;
-if (ageFourthPerson >= 18)
+int yearBirth4 = int.Parse(Console.ReadLine());
+participants[3].Age = 2022 - yearBirth4;
+if (participants[3].Age >= 18)
 {
+    participants[3].Numbers = new int[NUMBERS_AMOUNT];
+
     Console.WriteLine("Informe três números de 1 a 10");
-    for(int index = 0; index < NUMBERS_AMOUNT; index++)
-        numbersPerson4[index] = int.Parse(Console.ReadLine());
+    for(int indexNumbers = 0; indexNumbers < NUMBERS_AMOUNT; indexNumbers++)
+        participants[3].Numbers[indexNumbers] = int.Parse(Console.ReadLine());
     
-    validPersons[3] = true;
+    participants[3].Valid = true;
 }
-else if (ageFourthPerson < 18)
+else if (participants[3].Age < 18)
 {
     Console.WriteLine("Desclassificado!");
-    validPersons[3] = false;
+    participants[3].Valid = false;
 }
 #endregion Fourth Person
 
 #region Fifth Person
+participants[4] = new Participant();
 Console.WriteLine("\nQual o seu nome completo?");
-string fifthPerson = Console.ReadLine();
+participants[4].Name = Console.ReadLine();
 Console.WriteLine("Qual seu ano de nascimento?");
-int birthDate5 = int.Parse(Console.ReadLine());
-int ageFifthPerson = 2022 - birthDate5;
-if (ageFifthPerson >= 18)
+int yearBirth5 = int.Parse(Console.ReadLine());
+participants[4].Age = 2022 - yearBirth5;
+if (participants[4].Age >= 18)
 {
+    participants[4].Numbers = new int[NUMBERS_AMOUNT];
+
     Console.WriteLine("Informe três números de 1 a 10");
-    for(int index = 0; index < NUMBERS_AMOUNT; index++)
-        numbersPerson5[index] = int.Parse(Console.ReadLine());
+    for(int indexNumbers = 0; indexNumbers < NUMBERS_AMOUNT; indexNumbers++)
+        participants[4].Numbers[indexNumbers] = int.Parse(Console.ReadLine());
     
-    validPersons[4] = true;
+    participants[4].Valid = true;
 }
-else if (ageFifthPerson < 18)
+else if (participants[4].Age < 18)
 {
     Console.WriteLine("Desclassificado!");
-    validPersons[4] = false;
+    participants[4].Valid = false;
 
 }
 #endregion Fifth Person
@@ -122,73 +134,73 @@ Random sorteador = new Random();
 int sorteio = 7;  //sorteador.Next(1, 11);
 Console.WriteLine("\nO número sorteado é: " + sorteio);
 
-if (numbersPerson1.Contains(sorteio) || numbersPerson2.Contains(sorteio) || numbersPerson3.Contains(sorteio) ||
-    numbersPerson4.Contains(sorteio) || numbersPerson5.Contains(sorteio))
+if (participants[0].Numbers.Contains(sorteio) || participants[1].Numbers.Contains(sorteio) || participants[2].Numbers.Contains(sorteio) ||
+    participants[3].Numbers.Contains(sorteio) || participants[4].Numbers.Contains(sorteio))
 {
     Console.WriteLine("Alguém ganhou!");
     decimal prizeWinner = 1_000_000;
     int winners = 0;
-    if (numbersPerson1.Contains(sorteio))
+    if (participants[0].Numbers.Contains(sorteio))
         winners++;
-    if (numbersPerson2.Contains(sorteio))
+    if (participants[1].Numbers.Contains(sorteio))
         winners++;
-    if (numbersPerson3.Contains(sorteio))
+    if (participants[2].Numbers.Contains(sorteio))
         winners++;
-    if (numbersPerson4.Contains(sorteio))
+    if (participants[3].Numbers.Contains(sorteio))
         winners++;
-    if (numbersPerson5.Contains(sorteio))
+    if (participants[4].Numbers.Contains(sorteio))
         winners++;
     decimal divisionWinners = prizeWinner / winners;
     int evenBonus = 0;
     if (sorteio % 2 == 0 && winners > 1)
         evenBonus = 500;
-    int prizeAge1 = 100 * ageFirstPerson + evenBonus;
-    int prizeAge2 = 100 * ageSecondPerson + evenBonus;
-    int prizeAge3 = 100 * ageThirdPerson + evenBonus;
-    int prizeAge4 = 100 * ageFourthPerson + evenBonus;
-    int prizeAge5 = 100 * ageFifthPerson + evenBonus;
+    int prizeAge1 = 100 * participants[0].Age + evenBonus;
+    int prizeAge2 = 100 * participants[1].Age + evenBonus;
+    int prizeAge3 = 100 * participants[2].Age + evenBonus;
+    int prizeAge4 = 100 * participants[3].Age + evenBonus;
+    int prizeAge5 = 100 * participants[4].Age + evenBonus;
 
     int superBonus = 0;
     if (sorteio == 7 && winners == 1)
         superBonus = 700_000;
 
-    if (numbersPerson1.Contains(sorteio))
-        Console.WriteLine($"{firstPerson} de {ageFirstPerson} anos ganhou um prêmio de " + (divisionWinners + prizeAge1 + superBonus));
-    if (numbersPerson2.Contains(sorteio))
-        Console.WriteLine($"{secondPerson} de {ageSecondPerson} anos ganhou um prêmio de " + (divisionWinners + prizeAge2 + superBonus));
-    if (numbersPerson3.Contains(sorteio))
-        Console.WriteLine($"{thirdPerson} de {ageThirdPerson} anos ganhou um prêmio de " + (divisionWinners + prizeAge3 + superBonus));
-    if (numbersPerson4.Contains(sorteio))
-        Console.WriteLine($"{fourthPerson} de {ageFourthPerson} anos ganhou um prêmio de " + (divisionWinners + prizeAge4 + superBonus));
-    if (numbersPerson5.Contains(sorteio))
-        Console.WriteLine($"{fifthPerson} de {ageFifthPerson} anos ganhou um prêmio de " + (divisionWinners + prizeAge5 + superBonus));
+    if (participants[0].Numbers.Contains(sorteio))
+        Console.WriteLine($"{participants[0].Name} de {participants[0].Age} anos ganhou um prêmio de " + (divisionWinners + prizeAge1 + superBonus));
+    if (participants[1].Numbers.Contains(sorteio))
+        Console.WriteLine($"{participants[1].Name} de {participants[1].Age} anos ganhou um prêmio de " + (divisionWinners + prizeAge2 + superBonus));
+    if (participants[2].Numbers.Contains(sorteio))
+        Console.WriteLine($"{participants[2].Name} de {participants[2].Age} anos ganhou um prêmio de " + (divisionWinners + prizeAge3 + superBonus));
+    if (participants[3].Numbers.Contains(sorteio))
+        Console.WriteLine($"{participants[3].Name} de {participants[3].Age} anos ganhou um prêmio de " + (divisionWinners + prizeAge4 + superBonus));
+    if (participants[4].Numbers.Contains(sorteio))
+        Console.WriteLine($"{participants[4].Name} de {participants[4].Age} anos ganhou um prêmio de " + (divisionWinners + prizeAge5 + superBonus));
 }
 else
 {
     Console.WriteLine("ninguém ganhou!");
     decimal consolationPrize = 100_000;
     int validPeoples = 0;
-    if (validPersons[0])
+    if (participants[0].Valid)
         validPeoples++;
-    if (validPersons[1])
+    if (participants[1].Valid)
         validPeoples++;
-    if (validPersons[2])
+    if (participants[2].Valid)
         validPeoples++;
-    if (validPersons[3])
+    if (participants[3].Valid)
         validPeoples++;
-    if (validPersons[4])
+    if (participants[4].Valid)
         validPeoples++;
     decimal divisionPrize = consolationPrize / validPeoples;
-    if (validPersons[0])
-        Console.WriteLine($"{firstPerson} de {ageFirstPerson} anos ganhou um prêmio de consolação no valor de {divisionPrize}");
-    if (validPersons[1])
-        Console.WriteLine($"{secondPerson} de {ageSecondPerson} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
-    if (validPersons[2])
-        Console.WriteLine($"{thirdPerson} de {ageThirdPerson} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
-    if (validPersons[3])
-        Console.WriteLine($"{fourthPerson} de {ageFourthPerson} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
-    if (validPersons[4])
-        Console.WriteLine($"{fifthPerson} de {ageFifthPerson} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
+    if (participants[0].Valid)
+        Console.WriteLine($"{participants[0].Name} de {participants[0].Age} anos ganhou um prêmio de consolação no valor de {divisionPrize}");
+    if (participants[1].Valid)
+        Console.WriteLine($"{participants[1].Name} de {participants[1].Age} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
+    if (participants[2].Valid)
+        Console.WriteLine($"{participants[2].Name} de {participants[2].Age} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
+    if (participants[3].Valid)
+        Console.WriteLine($"{participants[3].Name} de {participants[3].Age} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
+    if (participants[4].Valid)
+        Console.WriteLine($"{participants[4].Name} de {participants[4].Age} anos ganhou um prêmio de consoloação no valor de {divisionPrize}");
 
 
 
