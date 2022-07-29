@@ -41,8 +41,8 @@ Random sorteador = new Random();
 int sorteio = 7;  //sorteador.Next(1, 11);
 Console.WriteLine("\nO número sorteado é: " + sorteio);
 
-if (participants[0].Numbers.Contains(sorteio) || participants[1].Numbers.Contains(sorteio) || participants[2].Numbers.Contains(sorteio) ||
-    participants[3].Numbers.Contains(sorteio) || participants[4].Numbers.Contains(sorteio))
+WinnerValidator meuValidador  = new WinnerValidator();
+if (meuValidador.HasWinner(participants, sorteio))
 {
     Console.WriteLine("Alguém ganhou!");
     decimal prizeWinner = 1_000_000;
@@ -57,7 +57,6 @@ if (participants[0].Numbers.Contains(sorteio) || participants[1].Numbers.Contain
     if (sorteio % 2 == 0 && winners > 1)
         evenBonus = 500;
 
-    //trocar variáveis abaixo por array 
     for (int index = 0; index < PARTICIPANTS_AMOUNT; index++)
         prizeAges[index] = 100 * participants[index].Age + evenBonus;
   
@@ -66,7 +65,7 @@ if (participants[0].Numbers.Contains(sorteio) || participants[1].Numbers.Contain
     if (sorteio == 7 && winners == 1)
         superBonus = 700_000;
 
-    //Inserir em laço de repetição
+   
     for (int indexParticipants = 0; indexParticipants < PARTICIPANTS_AMOUNT ; indexParticipants++)
     {
         if (participants[indexParticipants].Numbers != null && participants[indexParticipants].Numbers.Contains(sorteio))
@@ -81,7 +80,7 @@ else
     decimal consolationPrize = 100_000;
     int validPeoples = 0;
 
-    //Inserir em laço de repetição
+   
    for (int index = 0 ; index < PARTICIPANTS_AMOUNT ; index++)
     {
         if (participants[index].Valid)
@@ -90,7 +89,6 @@ else
 
     decimal divisionPrize = consolationPrize / validPeoples;
 
-    //Inserir em laço de repetição
     for ( int indexParticipants = 0; indexParticipants < PARTICIPANTS_AMOUNT ; indexParticipants++)
     {
          if (participants[indexParticipants].Valid)
