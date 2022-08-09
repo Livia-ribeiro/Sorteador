@@ -10,6 +10,9 @@ Participant[] participants = new Participant[PARTICIPANTS_AMOUNT];
 int[] prizeAges = new int[PARTICIPANTS_AMOUNT];
 #endregion Variáveis
 
+FileHandler fileHandler = new FileHandler();
+fileHandler.CreateFile();
+
 for(int indexParticipants = 0; indexParticipants < PARTICIPANTS_AMOUNT; indexParticipants++)
 {
     participants[indexParticipants] = new Participant();
