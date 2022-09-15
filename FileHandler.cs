@@ -10,12 +10,31 @@ namespace PROGRAM
     {
         public void CreateFile()
         {
-            // Verificar se arquivo já existe. (para não excluir o que já existe)
+
             string fileName = @"C:\Temp\Winners.txt";
-            using (FileStream fs = File.Create(fileName));
-            
-           
+            if (File.Exists(fileName) == false)
+                using (FileStream fs = File.Create(fileName));
+
         }
-        // Criar metodo que recebe um texto e escreve no arquivo.
+        //Metodo que recebe um texto e escreve no arquivo.
+
+        public void WriteText(string text)
+        {
+            using StreamWriter file = new StreamWriter(@"C:\Temp\Winners.txt", append: true);// Dá pra usar só true sem append?
+            file.WriteLine(text);
+
+        }
+        //Criar metodo que leia todo o contéudo do arquivo e escreva na tela
+
+        public void ReadText()
+        {
+          
+            string[] lines = File.ReadAllLines(@"C:\Temp\Winners.txt");
+            Console.WriteLine("Esses foram os últimos vencedores: \n");
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
     }
 }

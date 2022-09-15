@@ -10,13 +10,13 @@ namespace PROGRAM
     {
         public bool HasWinner(Participant[] participants, int raffle)
         {
-            bool validator = false;
-            foreach (Participant x in participants)
+            bool temVencedor = false;
+            foreach (Participant participante in participants)
             {
-                if (x.Numbers != null && x.Numbers.Contains(raffle)) 
-                    validator = true;
+                if (participante.Numbers != null && participante.Numbers.Contains(raffle))
+                    temVencedor = true;
             }
-            return validator;
+            return temVencedor;
         }
     }
 }

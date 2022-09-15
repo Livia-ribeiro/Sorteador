@@ -10,13 +10,19 @@ Participant[] participants = new Participant[PARTICIPANTS_AMOUNT];
 int[] prizeAges = new int[PARTICIPANTS_AMOUNT];
 #endregion Variáveis
 
-FileHandler fileHandler = new FileHandler();
-fileHandler.CreateFile();
+HistoricoVencedores informaçõesVencedores = new HistoricoVencedores();
+informaçõesVencedores.CreateFile();
 
-for(int indexParticipants = 0; indexParticipants < PARTICIPANTS_AMOUNT; indexParticipants++)
+FileHandler manipuladorAquivos = new FileHandler();
+manipuladorAquivos.CreateFile();
+
+manipuladorAquivos.ReadText();
+
+
+for (int indexParticipants = 0; indexParticipants < PARTICIPANTS_AMOUNT; indexParticipants++)
 {
     participants[indexParticipants] = new Participant();
-    Console.WriteLine("Qual o seu nome completo?");
+    Console.WriteLine("\nQual o seu nome completo?");
     participants[indexParticipants].Name = Console.ReadLine();
     Console.WriteLine("Qual seu ano de nascimento?");
     int yearBirth = int.Parse(Console.ReadLine());
@@ -68,13 +74,18 @@ if (meuValidador.HasWinner(participants, sorteio))
     if (sorteio == 7 && winners == 1)
         superBonus = 700_000;
 
-   
-    for (int indexParticipants = 0; indexParticipants < PARTICIPANTS_AMOUNT ; indexParticipants++)
+
+    for (int indexParticipants = 0; indexParticipants < PARTICIPANTS_AMOUNT; indexParticipants++)
     {
         if (participants[indexParticipants].Numbers != null && participants[indexParticipants].Numbers.Contains(sorteio))
+        {
             Console.WriteLine($"{participants[indexParticipants].Name} de {participants[indexParticipants].Age} anos ganhou um prêmio de " + (divisionWinners + prizeAges[indexParticipants] + superBonus));
-
+            manipuladorAquivos.WriteText(participants[indexParticipants].Name);
+            informaçõesVencedores.WriteText(participants[indexParticipants].Name, participants[indexParticipants].Age, (divisionWinners + prizeAges[indexParticipants] + superBonus));
+        }
     }
+
+  
 
 }
 else
@@ -100,3 +111,5 @@ else
   
 }
 
+// atividade1: anunciar os vencedores anteriores.
+// atividade2: criar uma nova classe que salve o nome, idade e valor ganho dos participantes em um arquivo CSV.
